@@ -46,15 +46,12 @@ STATS [image_path]
   - Creates a histogram from pixel values, where buckets are a  pre-defined list of well known colors.
   - The histogram is stored in  data/stats.
 
-COLOR_MORPH [image_path]:
+COLOR_MORPH [image_path]
   -  Applies color transitioning.
   - The transformations are stored in data/transformations.
   - The intermediate images are stored in data/frames.
   - The video is build in data/video.
 
-## Limitations:
-  The current implementation works best on images with low number of pixels as the pixel processing is performed sequentially.
-  Also,  the bucket identification is performed independently for each pixel. Applying the well known algorithm [X] that divides the image into boxes based on their second derivative can dramatically enhance the bucketing process.
-
-
-
+## Limitations
+  The current implementation works best on images with low number of pixels as the pixel processing is performed sequentially. Also, the assignment of pixels to color buckets is performed independently for each pixel.
+  By applying the image decomposition method which divides an image based on local intensity we can dramatically enhance the performance of the bucketing process.
